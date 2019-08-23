@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<center><img src= "https://66.media.tumblr.com/ff88a345d3c120f8d85279efed8a6b9a/tumblr_pw6jnoNbRx1u5ix77o1_640.png" style="width="400" height="400"s"></center>
+  <head>
+<link rel="stylesheet" href="FoodMePlease.css">
+<script src="http://opentable.herokuapp.com"></script>
+<script src="FoodMePlease.js" type="text/javascript"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+Restaurant-Information, html {
+  height: 200%;
+  margin: 0;
+  font-family: Arial;
+
+}
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 180%;
+}
+
+#Home {background-color: #cc0000;}
+#Restaurant-Information {background-color: #cc0000 ;}
+#Survey {background-color: #cc0000;}
+#About {background-color:  #cc0000;}
+
+</style>
+</head>
+
+
+
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, ' #cc0000')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openPage('Restaurant-Information', this, ' #cc0000')">Restaurant Information</button>
+<button class="tablink" onclick="openPage('Survey', this, '#cc0000')">Survey</button>
+<button class="tablink" onclick="openPage('About', this, ' #cc0000')">About</button>
+
+<div id="Home" class="tabcontent">
+    <center><h1>Home</h1></center>
+    <style>
+    Home, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial;
+    }
+
+  </style>
+
+  <div class="row">
+    <div class="column side">
+      <p1><right><img src="https://media.giphy.com/media/oyQkIYdqrS2cUQoowi/giphy.gif"style="width:245px;height:200px;"></right>
+      </p1>
+    </div>
+
+    <div class="column middle">
+      <h2>Main Content</h2>
+      <p2>Looking for a restaurant to celebrate a special occasion? Well, you’ve come to the right place.
+   This website will help you locate the best restaurants near you, and it will also give you various information regarding the restaurant. </p2>
+    <br></br>
+    <p3> You can input your zipcode on the next page and a list of results will pop up. It will give you a link where you can find all the information about the restaurant,
+such as ratings, dresscode and can even make reservations.</p3>
+    </div>
+    <div class="column side">
+      <p3>
+        <img src="https://img.buzzfeed.com/buzzfeed-static/static/2013-09/enhanced/webdr06/26/12/anigif_enhanced-buzz-30789-1380211795-0.gif?downsize=700:*&output-format=auto&output-quality=auto" style="width:300px;height:200px;align="right" ">
+  </p3>
+    </div>
+  </div>
+<p4>
+  <center><img src="https://media2.giphy.com/media/l378AwfJ7pqLlRHr2/giphy.gif" style="width:400px;height:300px;"></center>
+</div>
+<div id="Restaurant-Information" class="tabcontent">
+  <h13>Restaurant Information</h13>
+  <p> Enter your zipcode below. </p>
+   <label>Zipcode
+   <input id="zip" type="text" name="customer_zipcode" required>
+   <button onclick="ZipcodeInput()">Enter</button>
+   <p id="ConsoleInfo"></p>
+   <p id="ConsoleName"></p>
+</div>
+<div id="Survey" class="tabcontent">
+  <div id="wrapper">
+    <h7>Did the website satisfy you?</h7>
+    <br></br>
+    <p5>Take this questionnaire, and help us improve!</p5>
+  </div>
+<!-- /*form action="action_page.php" target="_blank" method="POST"/** -->
+    <form id="quiz">
+      <!-- Question 1 -->
+    <h8>This website is easy to use!</h8>
+      <!-- Here are the choices for the first question. Each input tag must have the same name. For this question, the name is q1. -->
+      <!-- The value is which answer the choice corresponds to. -->
+      <br><label><input type="radio" name="q1" value="c1">
+      Agree
+      </label><br/>
+      <label><input type="radio" name="q1" value="c2">
+      Disagree
+      </label><br/>
+      <label><input type="radio" name="q1" value="c3">
+      Uncertain
+      </label><br/>
+
+      <!-- Question 2 -->
+      <h9> Did you find what you're looking for?<h9>
+      <!-- Here are the choices for the second question. Notice how each input tag has the same name (q2), but a different name than the previous question. -->
+      <br><label><input type="radio" name="q2" value="c1">
+       No
+      </label><br />
+      <label><input type="radio" name="q2" value="c2">
+        Yes
+      </label><br />
+      <label><input type="radio" name="q2" value="c3">
+        Uncertain
+      </label><br />
+
+      <!-- Question 3 -->
+      <h10> I was able to make reservations!</h10>
+      <!-- Choices for the third question -->
+      <br><label><input type="radio" name="q3" value="c1">
+       Agree
+      </label><br />
+      <label><input type="radio" name="q3" value="c2">
+       Disagree
+      </label><br />
+      <label><input type="radio" name="q3" value="c3">
+        Uncertain
+      </label><br />
+
+
+      <!-- Question 4 -->
+      <h11> Was the layout pleasing to the eye?</h11>
+      <!-- Choices for the fourth question -->
+      <br><label><input type="radio" name="q4" value="c1">
+         Agree
+      </label><br/ >
+      <label><input type="radio" name="q4" value="c2">
+      Disagree
+      </label><br />
+      <label><input type="radio" name="q4" value="c3">
+      Uncertain
+      </label><br />
+
+      <script>
+      function myFunction() {
+        alert("Thank YOU for your input");
+      }
+      </script>
+   <button onclick="myFunction()">Submit</button>
+      <!-- /*input type="submit" value="Submit"> -->
+      <button type="reset" id="reset" onclick="resetAnswer()">Reset</button>
+      </form>
+
+
+     </form>
+
+    </form>
+
+  </div>
+
+
+
+
+<div id="About" class="tabcontent">
+  <center><h12>About Us</h12></center>
+  <br></br>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="https://66.media.tumblr.com/94682c72ba70742e2e13d049fd6993a6/tumblr_pwjew57rhU1u5ix77o1_1280.jpg"style="width:350px;height:250px;">
+        <div class="container">
+          <h3>Dy'Nasha Kirkland</h3>
+          <p> I'm 16 years old. I'm also an upcoming junior at Snyder High School. </p>
+          <p> Fun Fact: I was valedictorian, and I'm a part of the National Junior Honor Society</p>
+          <p>dynashakirkland1068@gmail.com</p>
+      <a href="https://www.gmail.com/" target="_blank"button>Contact</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <img src="https://66.media.tumblr.com/aed7cbe26737565f2555e45f145147a8/tumblr_pw8dk834nj1u5ix77o1_1280.jpg" style="width:350px;height:300px;">
+          <div class="container">
+            <h4>Tamnhu Nguyen</h4>
+            <p> I am an upcoming senior at McNair Academic High School. I am 17 years old.</p>
+            <p> Fun Fact: I am allergic to fruits in the Rose family (Rosaceae). Some of these fruits are: apples, pears, peaches, plums, apricots, and cherries.</p>
+            <p>nina2002kiki2004mikie2010@gmail.com</p>
+            <a href="https://www.gmail.com/" target="_blank"button>Contact</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://66.media.tumblr.com/c803973dbc79168280d39b7fd299c581/tumblr_pwjeqbeJfP1u5ix77o1_1280.jpg"style="width:250px;height:300px;">
+      <div class="container">
+        <h5>Nancy Bashir</h5>
+        <p>I am 16 year old and I am an Upcoming Junior at Infinity Institute. I am from Egypt and came to America when I was 5 years old. </p>
+          <p> Fun Fact: I broke the same leg twice. Once when I was in Egypt, I was trying to jump from my bed to my couch (I was a little kid... about 4) and the second time I was ran over by a car. </p>
+          <p>nancybashir3@gmail.com</p>
+        <a href="https://www.gmail.com/" target="_blank"button>Contact</button></a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://66.media.tumblr.com/e6fa2408763734515aa54511843a7b0c/tumblr_pw8eimZNcd1u5ix77o1_1280.jpg"style="width:500px;height:300px;">
+      <div class="container">
+        <h6> Kylie Bobadilla</h6>
+        <p> I am a 16 year-old, upcoming Senior at James J. Ferris High school. </p>
+        <p> Fun Fact: I always wanted to have a big house with a pool and travel around the world.</p>
+        <p>kylie.b2304@gmail.com</p>
+        <a href="https://www.gmail.com/" target="_blank"button>Contact</button></a>
+
+
+
+
+
+<script>
+
+  function openPage(pageName, elmnt, color) {
+    // Hide all elements with class="tabcontent" by default */
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Remove the background color of all tablinks/buttons
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+
+    // Show the specific tab content
+    document.getElementById(pageName).style.display = "block";
+
+    // Add the specific color to the button used to open the tab content
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+</body>
+</html>
